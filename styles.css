@@ -1,0 +1,162 @@
+/* ===== БАЗА (телефоны по умолчанию) ===== */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+
+  background-image: url("https://images.unsplash.com/photo-1494859802809-d069c3b71a8a");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#container {
+  width: 95%;
+  margin: 20px auto;
+  padding: 20px;
+
+  background-color: rgba(161,161,154,0.9);
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+/* форма */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+
+  border-radius: 6px;
+  border: 1px solid #999;
+  box-sizing: border-box;
+}
+
+/* кнопки */
+
+#addTip {
+  background-color: #786b85;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+#btn {
+  background-color: #907fa0;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+/* select чаевых */
+
+#tip {
+  display: none;
+}
+
+/* результаты */
+
+#amountPerPerson {
+  margin-top: 25px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#billSplit,
+#totalTip,
+#totalAmount {
+  background-color: rgba(164,187,161,0.9);
+  border: 1px solid rgb(119,116,116);
+  border-radius: 10px;
+
+  padding: 20px;
+  text-align: center;
+}
+
+/* =================================
+   📱 ТЕЛЕФОНЫ (до 480px)
+   ================================= */
+
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+}
+
+/* =================================
+   📱 ПЛАНШЕТЫ (768px и больше)
+   ================================= */
+
+@media (min-width: 768px) {
+
+  #container {
+    width: 80%;
+    max-width: 700px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #amountPerPerson {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #billSplit,
+  #totalTip,
+  #totalAmount {
+    flex: 1;
+  }
+
+}
+
+/* =================================
+   💻 НОУТБУКИ (1024px и больше)
+   ================================= */
+
+@media (min-width: 1024px) {
+
+  #container {
+    max-width: 800px;
+    padding: 30px;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 1.1rem;
+  }
+
+  #amountPerPerson {
+    gap: 20px;
+  }
+
+}
