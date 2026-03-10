@@ -1,162 +1,181 @@
-/* ===== БАЗА (телефоны по умолчанию) ===== */
-
 body {
-  margin: 0;
-  padding: 0;
+    background-image: url("fotofood.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color:rgba(160, 161, 159, 0.9);
+  }
+  
+  #container {
+      background-color:rgba(94, 97, 93, 0.9);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 600px;
+      height: 725px;
+      border-radius: 40px;
+      color: white;
+  }
+  form {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Montserrat', sans-serif;
+      margin: 20px;
+      padding: 20px;
+  }
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    color:#633b29;
+    align-self: center;
+  }
+  input {
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
+  }
+  #addTip {
+     background-color: rgba(145, 179, 142, 0.9);
+      border: none;
+      border-radius: 10px;
+      padding: 5px;
+      font-family: 'Montserrat', sans-serif;
+  }
+  #btn {
+    background-color: #f0aba1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+  }
+#tip{
   font-family: 'Montserrat', sans-serif;
-
-  background-image: url("https://images.unsplash.com/photo-1494859802809-d069c3b71a8a");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-#container {
-  width: 95%;
-  margin: 20px auto;
-  padding: 20px;
-
-  background-color: rgba(161,161,154,0.9);
-  border-radius: 30px;
-
-  display: flex;
-  flex-direction: column;
-}
-
-h1 {
-  text-align: center;
-  font-size: 1.6rem;
-}
-
-/* форма */
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-input,
-select,
-button {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-
-  border-radius: 6px;
-  border: 1px solid #999;
-  box-sizing: border-box;
-}
-
-/* кнопки */
-
-#addTip {
-  background-color: #786b85;
-  color: white;
-  border: none;
-  border-radius: 10px;
-}
-
-#btn {
-  background-color: #907fa0;
-  color: white;
-  border: none;
-  border-radius: 10px;
-}
-
-/* select чаевых */
-
-#tip {
   display: none;
 }
-
-/* результаты */
-
 #amountPerPerson {
-  margin-top: 25px;
+    display: flex;
+  }
+  #billSplit, #totalTip, #totalAmount {
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgba(145, 179, 142, 0.9);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
 
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+
+
+
+
+/* --- Мобильная адаптация --- */
+@media (max-width: 768px) {
+    #container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input, select, #addTip, #btn {
+        font-size: 16px;
+        padding: 8px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #amountPerPerson {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    #billSplit, #totalTip, #totalAmount {
+        margin: 10px 0;
+        padding: 15px;
+    }
 }
-
-#billSplit,
-#totalTip,
-#totalAmount {
-  background-color: rgba(164,187,161,0.9);
-  border: 1px solid rgb(119,116,116);
-  border-radius: 10px;
-
-  padding: 20px;
-  text-align: center;
-}
-
-/* =================================
-   📱 ТЕЛЕФОНЫ (до 480px)
-   ================================= */
 
 @media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
 
-  h1 {
-    font-size: 1.4rem;
-  }
+    #container {
+        border-radius: 25px;
+        padding: 15px;
+    }
 
-  input,
-  select,
-  button {
-    font-size: 1rem;
-    padding: 12px;
-  }
+    input, select, #addTip, #btn {
+        font-size: 14px;
+        padding: 6px;
+    }
 
+    #billSplit, #totalTip, #totalAmount {
+        font-size: 14px;
+        padding: 12px;
+    }
+     body {
+        height: 100vh;              
+        background-size: cover;      
+        background-position: center;  
+    }
+
+    #container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    #amountPerPerson {
+        flex-direction: column;
+    }
 }
 
-/* =================================
-   📱 ПЛАНШЕТЫ (768px и больше)
-   ================================= */
+/* --- Большие экраны ≥1000px --- */
+@media (min-width: 1000px) {
+    #container {
+        width: 600px;
+        height: 725px;
+        padding: 30px;
+       
+    }
 
-@media (min-width: 768px) {
+    h1 {
+        font-size: 32px;
+    }
 
-  #container {
-    width: 80%;
-    max-width: 700px;
-  }
+    input, select, #addTip, #btn {
+        font-size: 18px;
+        padding: 10px 12px;
+    }
 
-  h1 {
-    font-size: 2rem;
-  }
+    #amountPerPerson {
+        flex-direction: row;
+        justify-content: flex-start; 
+        gap: 20px;
+    }
 
-  #amountPerPerson {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+    #billSplit, #totalTip, #totalAmount {
+        margin: 0;
+        padding: 20px;
+        font-size: 16px;
+        width: 30%;
+    }
+     body {
+        height: 100vh;             
+        background-size: cover;      
+        background-position: center;  
+    }
 
-  #billSplit,
-  #totalTip,
-  #totalAmount {
-    flex: 1;
-  }
+    #container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
 
-}
-
-/* =================================
-   💻 НОУТБУКИ (1024px и больше)
-   ================================= */
-
-@media (min-width: 1024px) {
-
-  #container {
-    max-width: 800px;
-    padding: 30px;
-  }
-
-  input,
-  select,
-  button {
-    font-size: 1.1rem;
-  }
-
-  #amountPerPerson {
-    gap: 20px;
-  }
-
+    #amountPerPerson {
+        flex-direction: column;
+    }
 }
