@@ -65,117 +65,163 @@ body {
 
 
 
+ /* === Мобильная и планшетная адаптация === */
 
-
-/* --- Мобильная адаптация --- */
-@media (max-width: 768px) {
+/* === Смартфоны до 480px === */
+@media (max-width: 480px) {
     #container {
-        width: 90%;
+        width: 95%;
+        max-width: 400px; /* чтобы контейнер не был слишком широким */
         height: auto;
-        padding: 20px;
+        border-radius: 25px;
+        padding: 15px;
+        margin-left: 0; /* не центрируем */
+        box-sizing: border-box;
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 22px;
+        align-self: flex-start;
+    }
+
+    form {
+        margin: 0;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 100%;
     }
 
     input, select, #addTip, #btn {
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box; /* очень важно! */
+    }
+
+    #tip {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    #amountPerPerson {
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #billSplit, #totalTip, #totalAmount {
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+}
+
+/* === Малые планшеты 481px – 780px === */
+@media (min-width: 481px) and (max-width: 780px) {
+    #container {
+        width: 90%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 30px;
+        padding: 20px;
+        margin-left: 0;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        font-size: 26px;
+        align-self: flex-start;
+    }
+
+    form {
+        width: 100%;
+        padding: 15px 10px;
+        box-sizing: border-box;
+    }
+
+    input, select, #addTip, #btn {
+        width: 100%;
         font-size: 16px;
         padding: 8px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    #tip {
+        display: block;
         width: 100%;
         margin-bottom: 10px;
     }
 
     #amountPerPerson {
         flex-direction: column;
-        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     #billSplit, #totalTip, #totalAmount {
+        width: 100%;
         margin: 10px 0;
-        padding: 15px;
+        padding: 18px;
+        font-size: 15px;
+        box-sizing: border-box;
     }
 }
 
-@media (max-width: 480px) {
-    h1 {
-        font-size: 20px;
-    }
-
-    #container {
-        border-radius: 25px;
-        padding: 15px;
-    }
-
-    input, select, #addTip, #btn {
-        font-size: 14px;
-        padding: 6px;
-    }
-
-    #billSplit, #totalTip, #totalAmount {
-        font-size: 14px;
-        padding: 12px;
-    }
-     body {
-        height: 100vh;              
-        background-size: cover;      
-        background-position: center;  
-    }
-
-    #container {
-        width: 90%;
-        height: auto;
-        padding: 20px;
-    }
-
-    #amountPerPerson {
-        flex-direction: column;
-    }
-}
-
-/* --- Большие экраны ≥1000px --- */
-@media (min-width: 1000px) {
+/* === Планшеты и маленькие ноутбуки 781px – 1390px === */
+@media (min-width: 781px) and (max-width: 1390px) {
     #container {
         width: 600px;
-        height: 725px;
-        padding: 30px;
-       
+        max-width: 100%;
+        height: auto;
+        padding: 25px;
+        margin-left: 0;
+        box-sizing: border-box;
     }
 
     h1 {
-        font-size: 32px;
+        font-size: 28px;
+        align-self: flex-start;
+    }
+
+    form {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
     }
 
     input, select, #addTip, #btn {
-        font-size: 18px;
-        padding: 10px 12px;
+        width: 100%;
+        font-size: 17px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    #tip {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
     }
 
     #amountPerPerson {
         flex-direction: row;
-        justify-content: flex-start; 
-        gap: 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     #billSplit, #totalTip, #totalAmount {
+        width: 30%;
         margin: 0;
         padding: 20px;
         font-size: 16px;
-        width: 30%;
-    }
-     body {
-        height: 100vh;             
-        background-size: cover;      
-        background-position: center;  
-    }
-
-    #container {
-        width: 90%;
-        height: auto;
-        padding: 20px;
-    }
-
-    #amountPerPerson {
-        flex-direction: column;
+        box-sizing: border-box;
     }
 }
