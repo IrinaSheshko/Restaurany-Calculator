@@ -2,26 +2,33 @@ body {
     background-image: url("fotofood.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     background-color:rgba(160, 161, 159, 0.9);
-  }
-  
+    min-height: 100vh;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Чтобы body занимал всю высоту */
+  min-height: 100vh; /* Минимальная высота — 100% видимой области */
+  overflow-y: hidden; /* Отключит вертикальную прокрутку (если точно уверен) */
+}
   #container {
-      background-color:rgba(94, 97, 93, 0.9);
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      width: 600px;
-      height: 725px;
-      border-radius: 40px;
-      color: white;
+    background-color:rgba(124, 131, 123, 0.9);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 725px;
+    border-radius: 40px;
+    color: white;
   }
   form {
-      display: flex;
-      flex-direction: column;
-      font-family: 'Montserrat', sans-serif;
-      margin: 20px;
-      padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px;
+    padding: 20px;
   }
   h1 {
     font-family: 'Montserrat', sans-serif;
@@ -33,11 +40,11 @@ body {
     padding: 5px;
   }
   #addTip {
-     background-color: rgba(145, 179, 142, 0.9);
-      border: none;
-      border-radius: 10px;
-      padding: 5px;
-      font-family: 'Montserrat', sans-serif;
+    background-color: rgba(145, 179, 142, 0.9);
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: 'Montserrat', sans-serif;
   }
   #btn {
     background-color: #f0aba1;
@@ -48,55 +55,67 @@ body {
     font-family: 'Montserrat', sans-serif;
   }
 #tip{
-  font-family: 'Montserrat', sans-serif;
-  display: none;
+    font-family: 'Montserrat', sans-serif;
+    display: none;
 }
 #amountPerPerson {
-    display: flex;
+    display: flex; 
+    margin: 10px 0; 
+    width: 100%; 
+    box-sizing: border-box;
   }
   #billSplit, #totalTip, #totalAmount {
     font-family: 'Montserrat', sans-serif;
     background-color: rgba(145, 179, 142, 0.9);
-    margin: 20px;
-    padding: 20px;
+    margin: 15px;
+    padding: 15px;
     border-radius: 10px;
     border: 1px solid black;
-  }
+    width: 100%;
+    box-sizing: border-box;
+}
+input, select, #addTip, #btn {
+    transition: all 0.3s ease;
+}
 
 
-
- /* === Мобильная и планшетная адаптация === */
+/* === Мобильная и планшетная адаптация === */
 
 /* === Смартфоны до 480px === */
 @media (max-width: 480px) {
     #container {
         width: 95%;
-        max-width: 400px; /* чтобы контейнер не был слишком широким */
+        max-width: 400px;
         height: auto;
         border-radius: 25px;
         padding: 15px;
-        margin-left: 0; /* не центрируем */
+        margin: 15px auto; 
         box-sizing: border-box;
     }
-
     h1 {
         font-size: 22px;
-        align-self: flex-start;
+        text-align: center;
     }
-
-    form {
+    html, body {
         margin: 0;
-        padding: 10px;
-        box-sizing: border-box;
+        padding: 0;
+        height: 100%; /* Чтобы body занимал всю высоту */
+        min-height: 100vh; /* Минимальная высота — 100% видимой области */
+        overflow-y: auto; /* Отключит вертикальную прокрутку (если точно уверен) */
+}
+    form {
         width: 100%;
+        padding: 10px;
+        margin: 0;
+        box-sizing: border-box;
     }
 
     input, select, #addTip, #btn {
         width: 100%;
-        font-size: 16px;
         padding: 10px;
         margin-bottom: 10px;
-        box-sizing: border-box; /* очень важно! */
+        box-sizing: border-box;
+        font-size: 16px;
     }
 
     #tip {
@@ -108,15 +127,16 @@ body {
 
     #amountPerPerson {
         flex-direction: column;
-        margin: 0;
+        gap: 10px; /* Расстояние между блоками */
         width: 100%;
+        margin: 0 auto;
         box-sizing: border-box;
     }
 
     #billSplit, #totalTip, #totalAmount {
         width: 100%;
-        margin: 10px 0;
-        padding: 15px;
+        margin: 0;
+        padding: 12px;
         font-size: 14px;
         box-sizing: border-box;
     }
@@ -130,15 +150,21 @@ body {
         height: auto;
         border-radius: 30px;
         padding: 20px;
-        margin-left: 0;
+        margin: 20px auto; /* Центрируем */
         box-sizing: border-box;
     }
-
+    
     h1 {
         font-size: 26px;
-        align-self: flex-start;
+        text-align: center;
     }
-
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%; 
+        min-height: 100vh; 
+        overflow-y: auto; 
+    }
     form {
         width: 100%;
         padding: 15px 10px;
@@ -147,9 +173,9 @@ body {
 
     input, select, #addTip, #btn {
         width: 100%;
-        font-size: 16px;
         padding: 8px;
         margin-bottom: 10px;
+        font-size: 16px;
         box-sizing: border-box;
     }
 
@@ -159,35 +185,39 @@ body {
         margin-bottom: 10px;
     }
 
-    #amountPerPerson {
-        flex-direction: column;
-        width: 100%;
+   #amountPerPerson {
+        display: flex; 
+        margin: 10px 0; 
+        width: 100%; 
         box-sizing: border-box;
     }
-
-    #billSplit, #totalTip, #totalAmount {
+  #billSplit, #totalTip, #totalAmount {
+        font-family: 'Montserrat', sans-serif;
+        background-color: rgba(145, 179, 142, 0.9);
+        margin: 15px;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid black;
         width: 100%;
-        margin: 10px 0;
-        padding: 18px;
-        font-size: 15px;
         box-sizing: border-box;
-    }
+}
+    
 }
 
 /* === Планшеты и маленькие ноутбуки 781px – 1390px === */
+
 @media (min-width: 781px) and (max-width: 1390px) {
     #container {
-        width: 600px;
-        max-width: 100%;
-        height: auto;
-        padding: 25px;
-        margin-left: 0;
+        width: 90%;
+        max-width: 600px;
+        margin: 20px auto; 
+        padding: 20px;
         box-sizing: border-box;
     }
 
     h1 {
         font-size: 28px;
-        align-self: flex-start;
+        text-align: center;
     }
 
     form {
@@ -198,8 +228,8 @@ body {
 
     input, select, #addTip, #btn {
         width: 100%;
-        font-size: 17px;
         padding: 10px;
+        font-size: 17px;
         box-sizing: border-box;
     }
 
@@ -208,20 +238,29 @@ body {
         width: 100%;
         margin-bottom: 10px;
     }
-
+    
     #amountPerPerson {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 15px;
-        width: 100%;
+        display: flex; 
+        margin: 10px 0; 
+        width: 100%; 
         box-sizing: border-box;
     }
-
-    #billSplit, #totalTip, #totalAmount {
-        width: 30%;
-        margin: 0;
-        padding: 20px;
-        font-size: 16px;
+  #billSplit, #totalTip, #totalAmount {
+        font-family: 'Montserrat', sans-serif;
+        background-color: rgba(145, 179, 142, 0.9);
+        margin: 15px;
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid black;
+        width: 100%;
         box-sizing: border-box;
+}
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh; 
+        overflow-y: auto; 
     }
 }
